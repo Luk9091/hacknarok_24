@@ -15,11 +15,22 @@ pico_sdk_init()
 add_executable(${PROJECT_NAME}
     main.c
     I2C/i2c.c
-)
+    ToF/VL53L0X.c
 
+    OLED/ssd1306.c
+    Compass/compass.c
+    BME280/mbe280.c
+)
 
 pico_add_extra_outputs(${PROJECT_NAME})
 
+include_directories(
+    I2C
+    ToF
+    OLED
+    Compass
+    BME280
+)
 add_subdirectory(VL53L0X/Api)
 target_link_libraries(${PROJECT_NAME}
     pico_stdlib
@@ -28,6 +39,8 @@ target_link_libraries(${PROJECT_NAME}
 
     hardware_gpio
     hardware_i2c
+
+    vl53l0x_api_rp2040
 )
 
 
