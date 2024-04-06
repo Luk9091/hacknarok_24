@@ -22,10 +22,14 @@
 
 #define ToF_DEFAULT_ADDRESS 0x29
 
+#define ToF_CENTER_PIN      12
+#define ToF_LEFT_PIN        11
+#define ToF_RIGHT_PIN       13
 
 
-void ToF_sensorInit(VL53L0X_Dev_t *tof, uint8_t address, uint32_t pin);
-int ToF_measure(VL53L0X_Dev_t *tof);
+
+VL53L0X_Error ToF_sensorInit(VL53L0X_Dev_t *tof, uint8_t address, uint32_t pin);
+int16_t ToF_measure(VL53L0X_Dev_t *tof);
 
 
 #endif
