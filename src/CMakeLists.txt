@@ -15,11 +15,11 @@ pico_sdk_init()
 add_executable(${PROJECT_NAME}
     main.c
     I2C/i2c.c
-    ToF/VL53L0X.c
+    ToF/tof.c
 
-    OLED/ssd1306.c
-    COMPASS/compass.c
-    BME280/bme280.c
+    # OLED/ssd1306.c
+    # COMPASS/compass.c
+    # BME280/bme280.c
 )
 
 pico_add_extra_outputs(${PROJECT_NAME})
