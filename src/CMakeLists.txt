@@ -19,7 +19,7 @@ add_executable(${PROJECT_NAME}
 
     OLED/ssd1306.c
     Compass/compass.c
-    BME280/mbe280.c
+    BME280/bme280.c
 )
 
 pico_add_extra_outputs(${PROJECT_NAME})
