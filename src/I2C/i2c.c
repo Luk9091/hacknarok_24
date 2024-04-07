@@ -15,8 +15,8 @@ void I2C_Init(){
     isInit = 1;
 }
 
-int I2C_scan(){
-    I2C_Init();
+int I2C_scan(i2c_inst_t *channel){
+    // I2C_Init();
     int ret = 0;
     uint8_t rxData;
     uint dev = 0;
@@ -25,7 +25,7 @@ int I2C_scan(){
     
 
     for (uint8_t address = 0; address < 128; ++address){
-        ret = i2c_read_blocking(I2C_CHANNEL, address, &rxData, 1, false);
+        ret = i2c_read_blocking(channel, address, &rxData, 1, false);
 
         if (ret >= 0){
             printf("Address: 0x");

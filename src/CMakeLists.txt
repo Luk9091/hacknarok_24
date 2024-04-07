@@ -17,9 +17,11 @@ add_executable(${PROJECT_NAME}
     I2C/i2c.c
     ToF/tof.c
 
-    # OLED/ssd1306.c
+    OLED/ssd1306.c
+    OLED/oled.c
     Compass/compass.c
-    # BME280/bme280.c
+    BME280/bme280.c
+    Enkoder/encoder.c
 )
 
 pico_add_extra_outputs(${PROJECT_NAME})
@@ -30,7 +32,7 @@ include_directories(
     OLED
     Compass
     BME280
-
+    Enkoder
 )
 add_subdirectory(VL53L0X/Api)
 target_link_libraries(${PROJECT_NAME}
@@ -40,6 +42,7 @@ target_link_libraries(${PROJECT_NAME}
 
     hardware_gpio
     hardware_i2c
+    hardware_rtc
 
     vl53l0x_api_rp2040
 )

@@ -16,7 +16,7 @@
 #define I2C_SCL_PIN 19
 
 void I2C_Init();
-int I2C_scan();
+int I2C_scan(i2c_inst_t *channel);
 
 // void I2C_send(uint8_t dev, uint8_t byte);
 // #define I2C_write(dev, data) i2c_write_blocking(I2C_CHANNEL, dev, data, 1, false)
