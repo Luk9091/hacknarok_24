@@ -18,7 +18,7 @@ add_executable(${PROJECT_NAME}
     ToF/tof.c
 
     # OLED/ssd1306.c
-    # COMPASS/compass.c
+    Compass/compass.c
     # BME280/bme280.c
 )
 
@@ -28,8 +28,9 @@ include_directories(
     I2C
     ToF
     OLED
-    COMPASS
+    Compass
     BME280
+
 )
 add_subdirectory(VL53L0X/Api)
 target_link_libraries(${PROJECT_NAME}

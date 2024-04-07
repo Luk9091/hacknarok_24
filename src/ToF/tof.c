@@ -10,6 +10,7 @@ VL53L0X_Error ToF_sensorInit(VL53L0X_Dev_t *tof, uint8_t address, uint32_t pin){
     gpio_put(pin, 1);
 
     VL53L0X_i2c_Init(I2C_CHANNEL, I2C_SDA_PIN, I2C_SCL_PIN, I2C_FREQUENCY/1000, false);
+    sleep_ms(5);
     return VL53L0X_dev_init_i2c_newAddress(tof, VL53L0X_DEFAULT_MODE, address);
     // return VL53L0X_device_initialise(tof, VL53L0X_DEFAULT_MODE);
 }

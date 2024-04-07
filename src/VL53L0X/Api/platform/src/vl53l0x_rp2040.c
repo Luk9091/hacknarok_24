@@ -60,7 +60,7 @@ void VL53L0X_i2c_Init(i2c_inst_t *i2c_instance, uint sda, uint scl, uint32_t spe
 }
 
 VL53L0X_Error VL53L0X_dev_init_i2c_newAddress(VL53L0X_Dev_t *pDevice, uint32_t RangeProfile, uint8_t newAddress){
-    if (newAddress != 0){
+    if (newAddress != 0 && newAddress != 0x29){
         VL53L0X_SetDeviceAddress(pDevice, newAddress);
         pDevice->I2cDevAddr = newAddress;
     }
